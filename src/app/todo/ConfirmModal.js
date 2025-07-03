@@ -26,28 +26,28 @@ export default function ConfirmModal({ title, message, modalType = "simple", req
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30" onClick={onCancel}>
-      <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md border border-gray-200 relative" onClick={e => e.stopPropagation()}>
+      <div className="bg-white shadow-2xl p-8 w-full max-w-md border border-gray-200 relative" onClick={e => e.stopPropagation()}>
         <h3 className="text-xl font-semibold mb-4 text-gray-900">{title}</h3>
         <div className="mb-4 text-gray-700 whitespace-pre-line">{message}</div>
         {requireText && requiredWord && (
           <div className="mb-4">
-            <p className="text-gray-600 mb-2">Tippe <span className="font-mono bg-gray-100 px-2 py-1 rounded text-gray-800">{requiredWord}</span> zur Bestätigung:</p>
+            <p className="text-gray-600 mb-2">Tippe <span className="font-mono bg-gray-100 px-2 py-1 text-gray-800">{requiredWord}</span> zur Bestätigung:</p>
             <input
               type="text"
               value={confirmText}
               onChange={e => setConfirmText(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50"
+              className="w-full px-3 py-2 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50"
               placeholder={`Tippe ${requiredWord}...`}
               autoFocus
             />
           </div>
         )}
         <div className="flex justify-end gap-2 mt-6">
-          <button onClick={onCancel} className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">Abbrechen</button>
+          <button onClick={onCancel} className="px-4 py-2 bg-gray-200 text-gray-700 hover:bg-gray-300">Abbrechen</button>
           <button
             onClick={handleConfirm}
-            className={`px-4 py-2 rounded-lg bg-black text-white font-semibold hover:bg-gray-900 transition ${!isConfirmEnabled ? "opacity-50 cursor-not-allowed" : ""}`}
+            className={`px-4 py-2 bg-black text-white font-semibold hover:bg-gray-900 transition ${!isConfirmEnabled ? "opacity-50 cursor-not-allowed" : ""}`}
             disabled={!isConfirmEnabled}
           >
             Bestätigen

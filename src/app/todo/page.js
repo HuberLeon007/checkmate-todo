@@ -110,15 +110,15 @@ export default function TodoPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900/80 to-gray-700/90 animate-fade-in">
-      <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl p-8 w-full max-w-2xl border border-gray-200 animate-pop-in flex flex-col max-h-[90vh]">
+      <div className="bg-white/80 backdrop-blur-md shadow-2xl p-8 w-full max-w-2xl border border-gray-200 animate-pop-in flex flex-col max-h-[90vh]">
         <h1 className="text-3xl font-semibold text-center mb-8 text-gray-900 tracking-tight">Checkmate To-Do</h1>
         {totalCount > 0 && (
-          <div className="mb-6 sticky top-0 z-10 bg-white/80 backdrop-blur-md pt-2 pb-2 rounded-t-3xl">
+          <div className="mb-6 sticky top-0 z-10 bg-white/80 backdrop-blur-md pt-2 pb-2">
             <div className="flex justify-between items-center mb-2">
               <span className="text-gray-700 font-medium">{completedCount} of {totalCount} completed</span>
-              <div className="w-40 h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div className="w-40 h-2 bg-gray-200 overflow-hidden">
                 <div
-                  className="h-2 bg-black rounded-full transition-all"
+                  className="h-2 bg-black transition-all"
                   style={{ width: `${(completedCount / totalCount) * 100}%` }}
                 ></div>
               </div>
@@ -132,11 +132,11 @@ export default function TodoPage() {
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Add a new task..."
-            className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50 text-black text-color-black placeholder:text-gray-500"
+            className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50 text-black text-color-black placeholder:text-gray-500"
           />
           <button
             onClick={addTask}
-            className="px-6 py-3 rounded-xl bg-black text-white font-semibold hover:bg-gray-900 transition"
+            className="px-6 py-3 bg-black text-white font-semibold hover:bg-gray-900 transition"
           >
             Add
           </button>
@@ -159,10 +159,10 @@ export default function TodoPage() {
           )}
         </div>
         {tasks.length > 0 && (
-          <div className="flex justify-between gap-2 text-black sticky bottom-0 bg-white/80 backdrop-blur-md pb-2 pt-2 rounded-b-3xl">
+          <div className="flex justify-between gap-2 text-black sticky bottom-0 bg-white/80 backdrop-blur-md pb-2 pt-2">
             <button
               onClick={deleteAllTasks}
-              className="px-4 py-2 rounded-xl bg-red-500 text-white font-semibold hover:bg-red-600 transition"
+              className="px-4 py-2 bg-red-500 text-white font-semibold hover:bg-red-600 transition"
               title="Delete all tasks"
             >
               Delete all
@@ -170,7 +170,7 @@ export default function TodoPage() {
             {completedCount > 0 && (
               <button
                 onClick={deleteAllCompleted}
-                className="px-4 py-2 rounded-xl bg-orange-400 text-white font-semibold hover:bg-orange-500 transition"
+                className="px-4 py-2 bg-orange-400 text-white font-semibold hover:bg-orange-500 transition"
                 title="Delete completed tasks"
               >
                 Delete done ({completedCount})

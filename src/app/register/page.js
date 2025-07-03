@@ -55,14 +55,14 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300 animate-fade-in">
-      <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl p-10 w-full max-w-md border border-gray-200 animate-pop-in">
+      <div className="bg-white/80 backdrop-blur-md shadow-2xl p-10 w-full max-w-md border border-gray-200 animate-pop-in">
         <h1 className="text-3xl font-semibold text-center mb-8 text-black tracking-tight">Register</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-black font-medium mb-2">E-Mail</label>
             <input
               type="email"
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none bg-white text-black placeholder:text-gray-500"
+              className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none bg-white text-black placeholder:text-gray-500"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -73,7 +73,7 @@ export default function RegisterPage() {
             <label className="block text-black font-medium mb-2">Password</label>
             <input
               type="password"
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50 text-black placeholder:text-gray-500"
+              className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50 text-black placeholder:text-gray-500"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -84,7 +84,7 @@ export default function RegisterPage() {
             <label className="block text-black font-medium mb-2">Confirm Password</label>
             <input
               type="password"
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50 text-black placeholder:text-gray-500"
+              className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50 text-black placeholder:text-gray-500"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
@@ -94,7 +94,7 @@ export default function RegisterPage() {
           {success && <div className="text-green-600 text-sm text-center">{success}</div>}
           <button
             type="submit"
-            className={`w-full py-3 rounded-xl font-semibold transition ${allRequirementsMet(password) ? "bg-black text-white hover:bg-gray-900" : "bg-gray-300 text-gray-400 cursor-not-allowed"}`}
+            className={`w-full py-3 font-semibold transition ${allRequirementsMet(password) ? "bg-black text-white hover:bg-gray-900" : "bg-gray-300 text-gray-400 cursor-not-allowed"}`}
             disabled={!allRequirementsMet(password)}
           >
             Register
