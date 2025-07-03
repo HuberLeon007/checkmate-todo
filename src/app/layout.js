@@ -1,3 +1,5 @@
+import { AppleNavbar } from "./todo/ConfirmModal";
+import { AuthProvider } from "./auth-context";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -20,9 +22,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-gray-100 to-gray-300 min-h-screen`}
       >
-        {children}
+        <AuthProvider>
+          <AppleNavbar />
+          <div className="pt-20">{children}</div>
+        </AuthProvider>
       </body>
     </html>
   );
